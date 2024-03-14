@@ -28,3 +28,28 @@ a {
 /* * {
     text-align: center;
 } */
+
+
+:root {
+    /* --main: #023047; */
+    --main: #041737;
+    --main-gradient: radial-gradient(
+      circle at 40px 40px,
+      #063d58 0%,
+      #023047 100%
+    );
+    /* --second: #219ebc; */
+    --second: #3963ad;
+    --background: #f0f1f3;
+    /* --highlight: #31424a; */
+    --highlight: #0c2447;
+    /* --highlight-opacity: #31424a77; */
+    --highlight-opacity: #0c2447a9;
+    --purple: #5c4fa1;
+    --red: #f6835e;
+    --sky: #edf2ff;
+    --blue: #5680dd;
+    --gray: #969ba4;
+    --sky-green: #edfff7;
+  }
+  
