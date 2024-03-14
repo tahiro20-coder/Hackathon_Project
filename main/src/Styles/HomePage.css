@@ -228,13 +228,14 @@
  .sec-dc {
      font-weight: 300;
      font-size: 1.25rem;
-     width: 65%;
+     width: 85%;
      line-height: 150%;
      -webkit-font-smoothing: antialiased;
      color: #666666;
      margin-top: 5px;
      margin-bottom: 25px;
      justify-content: center;
+     text-align: center;
  }
  
  .sec-desc {
@@ -296,19 +297,21 @@
  .img1 {
      
      position: relative;
-     top: -100px;
-     left: 50px;
-     transform: rotateZ(-35deg);
+     top: -50px;
+     /* left: 50px; */
+     /* transform: rotateZ(-35deg); */
      z-index: -555;
+     width: 600px;
      
  }
  
  .img2 {
      position: relative;
-     top: -350px;
-     left: 125px;
-     transform: rotateZ(-35deg) scale(1.25);
+     top: -450px;
+     left: 0px;
+     /* transform: rotateZ(-35deg) scale(1.25); */
      z-index: -555;
+     width: 570px;
  }
  
  .layer,

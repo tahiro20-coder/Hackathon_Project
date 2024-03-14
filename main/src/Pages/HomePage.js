@@ -4,6 +4,9 @@ import "../Styles/HomePage.css";
 import img1 from "../Images/img1.png";
 import img2 from "../Images/img2.png";
 import img3 from "../Images/img3.png";
+import planet from "../Images/planet.jfif";
+import res from "../Images/res.jfif";
+import res1 from "../Images/res1.jfif";
 import intro_img from "../Images/intro_img.png";
 // import { BsArrowRight } from "react-icons/bs";
 
@@ -46,23 +49,23 @@ function HomePage() {
                 <div className="sec-main">
                     <div className="sec-cont">
                         <span className='sec-nb'>
-                            45+
+                            12+
                         </span>
                         <span className='sec-dc'>
-                            Mathematical problems
+                            Garbage Types to Recycle
                         </span>
                     </div>
                     <div className="sec-cont">
                         <span className='sec-nb'>
-                            5sec
+                            Infos
                         </span>
                         <span className='sec-dc'>
-                            Maximum in calculations
+                            In each garbage type for recycling
                         </span>
                     </div>
                     <div className="sec-desc">
                         <span className='sec-nc'>
-                            Reachness and Fastness Calculations
+                            Reachness and Informative Advices
                         </span>
                     </div>
                 </div>
@@ -70,25 +73,28 @@ function HomePage() {
             <Container fluid="xl" className='container desc1 d-flex justify-content-within align-items-center' >
                 <div className='imgcont w-50' >
                 <div className="layer ">
-                    <img className='img1' src={img1} alt="" /> 
+                    <img className='img1' src={res} alt="" /> 
                 </div>
                 
                     
                 </div>
                 <div className='desco1 w-50'>
                     <div className='descotitle'>
-                    Step by Step <span style={{color: "#178a9f"}}>Claculations</span> 
+                    Find the type of your <span style={{color: "#178a9f"}}>Garbage</span> 
                     </div>
                     <div className='descocontent'>
-                        Our interactive Mathematical Calculator website simplifies complex Mathematical computations
-                     and is designed for students, educators, and mathematics enthusiasts. It provides 
-                     a user-friendly interface for performing operations like matrix multiplication, 
-                     addition, subtraction, determinants, inverses, and solving systems of linear equations.
+                    Ever stare at a piece of trash and wonder, "Can this be recycled?" We've all been there. That's why we created a one-of-a-kind AI model to help you quickly and accurately identify your garbage type!
+
+
                      <br></br> <br></br>
-                    The website offers step-by-step guidance and explanations to help users understand 
-                    the underlying principles behind each computation. It also features interactive visualizations 
-                    that allow users to visualize matrices and their transformations, 
-                    aiding in the comprehension of geometric interpretations of Mathematical concepts.
+                     Simply snap a picture of your item (or enter a description), and our intelligent system will analyze it to determine the category. It's that easy!
+                     Our AI can identify a wide range of garbage types, By using our tool, you can:
+                    Reduce landfill waste, 
+                    Increase recycling rates, 
+                    Improve your environmental impact, 
+                    Become a recycling pro!.
+                    <br></br> <br></br>
+                    Stop the confusion! Find your garbage type today and take the first step towards a more sustainable future.
                     </div>
                 </div>
             </Container>
@@ -96,24 +102,19 @@ function HomePage() {
             <Container fluid="xl" className='container desc1 d-flex justify-content-within align-items-center'>
                 <div className='desco1 w-50' style={{paddingRight:"2rem",paddingLeft:"0"}}>
                     <div className='descotitle'>
-                    Making the <span style={{color: "#D9383C"}}>Complex </span> much <span style={{color: "#178a9f"}}>Easier </span>
+                    Making the <span style={{color: "#578a25"}}>Planet </span> much <span style={{color: "#178a9f"}}>Better </span>
                     </div>
                     <div className='descocontent'>
-                        In addition to basic calculations, the website includes advanced features such as eigendecomposition, singular
-                    value decomposition, and diagonalization. These features enable users to explore 
-                    more complex aspects of linear algebra and its applications in various fields like 
-                    physics, engineering, computer science, and data analysis.
+                    Welcome to a community dedicated to taking action for a healthier planet! We all know the Earth faces environmental challenges, but even small changes in our daily lives can make a significant difference. This is your one-stop shop for actionable tips, inspiring stories, and resources to empower you to be a part of the solution.
                      <br></br> <br></br>
-                     Whether you're studying for an exam, working on a project, or simply 
-                     interested in the world of linear algebra, our interactive calculator 
-                     website is designed to support you every step of the way. It aims to make 
-                     linear algebra accessible, enjoyable, and helps users unlock 
-                     the power of this mathematical discipline with ease and confidence.
+                     Remember, every action counts!  By joining our community and making small changes, together we can create a ripple effect of positive environmental change.
+                     <br></br> <br></br>
+                     Let's work towards a brighter future for our planet!
                     </div>
                 </div>
                 <div className='imgcont w-50' >
                 <div className="layer2"></div>
-                    <img className='img2' src={img2} alt=""  />
+                    <img className='img2' src={planet} alt=""  />
                     
                 </div>
                 
@@ -126,35 +127,13 @@ function HomePage() {
                     <div className='main-content'>
                         <div className="tr-desc">
                             <span className='tr-nc'>
-                                Special Thanks
+                            Acknowledge
                             </span>
                         </div>
                         <span>
-                            to all Doctors that help us to make this website
-                            and give us the motivation to create it especially Dr Bouanane,Where
-                            The website functions was created and maintained by her courses
-                            in these subjects:
+                            This demo website is presented in the GAIA Hackathon Act 4 in LabLab.me, we wanted thank them for giving us the chance to present this work
                         </span>
-                        <div className='courses'>
-                            <div className='course-l'>
-                            Linear Algebra
-                            </div>
-                            <div className='course-l'>
-                            Geometry Algebra
-                            </div>
-                            <div className='course-l'>
-                            Matrix Factorization
-                            </div>
-                            <div className='course-l'>
-                            Vector Calculas
-                            </div>
-                            <div className='course-l'>
-                            Constrained Optimization
-                            </div>
-                            <div className='course-l'>
-                            unconstrained Optimization
-                            </div>
-                        </div>
+                        
                     </div>
 
                 </div>
