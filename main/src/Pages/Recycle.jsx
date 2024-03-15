@@ -391,7 +391,7 @@ const Recycle = () => {
                 </div>
                 <div className='desco1 w-50'>
                     <div className='descotitle'>
-                    What is <span style={{color: "#178a9f"}}>{Infos[showIndex]["title"]}</span>  means
+                    What did <span style={{color: "#178a9f"}}>{Infos[showIndex]["title"]}</span>  means
                     </div>
                     <div className='descocontent'>
                         {Infos[showIndex]["Whatare"]}
