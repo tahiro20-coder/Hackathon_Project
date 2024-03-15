@@ -9,8 +9,6 @@ app = Flask(__name__, static_url_path='', static_folder='fronted/build')
 CORS(app, origins=['https://smart-recycle.onrender.com'], methods=['GET', 'POST'], allow_headers=['Content-Type']) #comment this on deployment
 api = Api(app)
 
-# load form env API_KEY
-API_KEY  = os.environ.get('API_KEY')
 
 
 @app.route("/", defaults={'path':''})
