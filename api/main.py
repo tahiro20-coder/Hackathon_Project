@@ -6,17 +6,18 @@ import math as mt
 import json
 from PIL import Image  
 
-from PIL import Image
+import tensorflow as tf
+model=tf.keras.models.load_model('api/_9217')
 
-import torchvision.transforms as transforms
-import torch
+# import torchvision.transforms as transforms
+# import torch
 # import pickle
 # from functools import partial
 # pickle.load = partial(pickle.load, encoding="latin1")
 # pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
-model_path = "api/MobileNet__.pth" 
+# model_path = "api/MobileNet__.pth" 
 # model = torch.load(model_path, map_location=lambda storage, loc: storage, pickle_module=pickle)
-model = torch.load(model_path)
+# model = torch.load(model_path)
 
 # image = Image.open("/kaggle/input/garbage-classification/Garbage classification/Garbage classification/cardboard/cardboard1.jpg")  # Change "path_to_your_image.jpg" to the actual file path
 
