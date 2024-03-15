@@ -4,8 +4,7 @@ import requests as req
 import numpy as np
 import json
 from PIL import Image  
-import PIL as pl
-print(req.__version__)
+
 import tensorflow as tf
 model=tf.keras.models.load_model('api/_9217')
 
