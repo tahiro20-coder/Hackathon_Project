@@ -10,8 +10,12 @@ from PIL import Image
 
 import torchvision.transforms as transforms
 import torch
-from torchvision.models.mobilenetv2 import Conv2dNormActivation
+# import pickle
+# from functools import partial
+# pickle.load = partial(pickle.load, encoding="latin1")
+# pickle.Unpickler = partial(pickle.Unpickler, encoding="latin1")
 model_path = "api/MobileNet__.pth" 
+# model = torch.load(model_path, map_location=lambda storage, loc: storage, pickle_module=pickle)
 model = torch.load(model_path)
 
 # image = Image.open("/kaggle/input/garbage-classification/Garbage classification/Garbage classification/cardboard/cardboard1.jpg")  # Change "path_to_your_image.jpg" to the actual file path
