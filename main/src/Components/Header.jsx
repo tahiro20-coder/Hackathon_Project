@@ -1,4 +1,4 @@
-import univ_logo from "../Images/univ_logo.png";
+// import univ_logo from "../Images/univ_logo.png";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/Header.css";
 import { Link, useMatch, useResolvedPath, useLocation } from "react-router-dom";
 import WhiteLG from "../Images/WhiteLG.png";
+import univ_logo from "../Images/logo.png";
 function CustomLink({ to, children, ...props }) {
   const url = window.location.pathname;
   const resolvedPath = useResolvedPath(to);
@@ -50,8 +51,8 @@ function Header() {
               <CustomLink className="link_page" to="/Recycle">
               Recycle
               </CustomLink>
-              <CustomLink className="link_page" to="/Learning">
-                Learn
+              <CustomLink className="link_page" to="/Assistant">
+              Assistant
               </CustomLink>
               <CustomLink className="link_page" to="/About">
                 About

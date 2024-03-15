@@ -1,7 +1,7 @@
 export default class APIService {
     // Insert an article
-    static recycle(body) {
-        return fetch(`http://localhost:5000/recycle`, {
+    static chat(body) {
+        return fetch(`http://localhost:5000/chat`, {
             'method': 'POST',
             headers: {
                 'Content-Type': 'application/json'

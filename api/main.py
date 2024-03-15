@@ -6,7 +6,7 @@ import math as mt
 import json
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
-class Recycle(Resource):
+class Chat(Resource):
     def get(self):
         return {
         'message': "recycle Get"

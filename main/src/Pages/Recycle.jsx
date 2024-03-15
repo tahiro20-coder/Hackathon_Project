@@ -1,5 +1,5 @@
 import React , {useState,useEffect} from 'react'
-
+import ChatComp from '../Components/ChatComp'
 import "../Styles/Recycle.css"
 import Uploader from '../Components/Uploader'
 import APIService from '../Api/APIService'
@@ -17,11 +17,71 @@ import plastic from "../Images/plastic.jfif"
 import shoes from "../Images/shoes.jfif"
 import trash from "../Images/trash.jfif"
 import whiteglass from "../Images/white-glass.jfif"
+import battery1 from "../Images/battery1.jfif"
+import battery2 from "../Images/battery2.jfif"
+import battery3 from "../Images/battery3.jfif"
+import battery4 from "../Images/battery4.jfif"
+import battery5 from "../Images/battery5.jfif"
+import bio1 from "../Images/bio1.jfif"
+import bio2 from "../Images/bio2.jfif"
+import bio3 from "../Images/bio3.jfif"
+import bio4 from "../Images/bio4.jfif"
+import bio5 from "../Images/bio5.jfif"
+import br1 from "../Images/br1.jfif"
+import br2 from "../Images/br2.jfif"
+import br3 from "../Images/br3.jfif"
+import br4 from "../Images/br4.jfif"
+import br5 from "../Images/br5.jfif"
+import cardboard1 from "../Images/cardboard1.jfif"
+import cardboard2 from "../Images/cardboard2.jfif"
+import cardboard3 from "../Images/cardboard3.jfif"
+import cardboard4 from "../Images/cardboard4.jfif"
+import cardboard5 from "../Images/cardboard5.jfif"
+import clothes1 from "../Images/clothes1.jfif"
+import clothes2 from "../Images/clothes2.jfif"
+import clothes3 from "../Images/clothes3.jfif"
+import clothes4 from "../Images/clothes4.jfif"
+import clothes5 from "../Images/clothes5.jfif"
+import gr1 from "../Images/gr1.jfif"
+import gr2 from "../Images/gr2.jfif"
+import gr3 from "../Images/gr3.jfif"
+import gr4 from "../Images/gr4.jfif"
+import gr5 from "../Images/gr5.jfif"
+import metal1 from "../Images/metal1.jfif"
+import metal2 from "../Images/metal2.jfif"
+import metal3 from "../Images/metal3.jfif"
+import metal4 from "../Images/metal4.jfif"
+import metal5 from "../Images/metal5.jfif"
+import paper1 from "../Images/paper1.jfif"
+import paper2 from "../Images/paper2.jfif"
+import paper3 from "../Images/paper3.jfif"
+import paper4 from "../Images/paper4.jfif"
+import paper5 from "../Images/paper5.jfif"
+import plastic1 from "../Images/plastic1.jfif"
+import plastic2 from "../Images/plastic2.jfif"
+import plastic3 from "../Images/plastic3.jfif"
+import plastic4 from "../Images/plastic4.jfif"
+import plastic5 from "../Images/plastic5.jfif"
+import resgeneral from "../Images/resgeneral.jfif"
+import shoes1 from "../Images/shoes1.jfif"
+import shoes2 from "../Images/shoes2.jfif"
+import shoes3 from "../Images/shoes3.jfif"
+import shoes4 from "../Images/shoes4.jfif"
+import shoes5 from "../Images/shoes5.jfif"
+import trash1 from "../Images/trash1.jfif"
+import trash2 from "../Images/trash2.jfif"
+import trash3 from "../Images/trash3.jfif"
+import trash4 from "../Images/trash4.jfif"
+import trash5 from "../Images/trash5.jfif"
+import wt1 from "../Images/wt1.jfif"
+import wt2 from "../Images/wt2.jfif"
+import wt3 from "../Images/wt3.jfif"
+import wt4 from "../Images/wt4.jfif"
+import wt5 from "../Images/wt5.jfif"
 
 const images = [
     battery,
     biological,
-    brownglass,
     brownglass,
     cardboard,
     clothes,
@@ -33,6 +93,22 @@ const images = [
     trash,
     whiteglass
 ]
+const Resimages = [
+    [battery1,battery2,battery3,battery4,battery5],
+    [bio1,bio2,bio3,bio4,bio5],
+    [br1,br2,br3,br4,br5],
+    [cardboard1,cardboard2,cardboard3,cardboard4,cardboard5],
+    [clothes1,clothes2,clothes3,clothes4,clothes5],
+    [gr1,gr2,gr3,gr4,gr5],
+    [metal1,metal2,metal3,metal4,metal5],
+    [paper1,paper2,paper3,paper4,paper5],
+    [plastic1,plastic2,plastic3,plastic4,plastic5],
+    [shoes1,shoes2,shoes3,shoes4,shoes5],
+    [trash1,trash2,trash3,trash4,trash5],
+    [wt1,wt2,wt3,wt4,wt5]
+]
+
+
 const guidelines =  `
 There are several ways to find information about recycling in your area:
 
@@ -332,14 +408,16 @@ const Recycle = () => {
     const [question,setquestion] = useState("what to do with plastic garbage")
     const [showIndex,setShowIndex] = useState(0)
     const handleSubmit = () => {
-        setWaiting(true);
-        APIService.recycle({question})
-          .then((response) => {
-            setoutput(response["output"]);
-            setWaiting(false);
-            console.log(response)
-          })
-          .catch((error) => console.log("error", error));
+        // setWaiting(true);
+        // APIService.chat({question})
+        //   .then((response) => {
+        //     setoutput(response["output"]);
+        //     setWaiting(false);
+        //     console.log(response)
+        //   })
+        //   .catch((error) => console.log("error", error));
+        setoutput("qsdqs");
+       setWaiting(false);
       };
       const handleReset = () => {
       }
@@ -378,15 +456,38 @@ const Recycle = () => {
            </div>
           ) : (
             <div>
+                <div style={{height:50}}></div>
                 <div className='intro-title titlec'>
                     <span>Garbage Analysing Results</span>
                 </div>
                 <div style={{height:50}}></div>
+
+                <Container fluid="xl" className='container desc1 d-flex justify-content-within align-items-center crsv' >
+                <div className='imgcont w-50' style={{zIndex:500}}>
+                <div className="layer " style={{zIndex:500}}>
+                    <img className='img1 rescov' src={images[showIndex]} alt="" /> 
+                </div>
+                </div>
+                <div className='desco1 w-50' style={{zIndex:500,marginLeft:"-70px"}}>
+                <div className='descotitle' style={{marginTop:"-50px"}}>
+                    <div className="effect-wrap">
+                        <div>
+                            <h1 className="effect-block">
+                        <span>This Garbage is</span>
+                    </h1>
+                    <h1 className="effect-block" id="another">
+                        <span>{Infos[showIndex]["title"]}</span>
+                    </h1>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </Container>
                 
                 <Container fluid="xl" className='container desc1 d-flex justify-content-within align-items-center' >
                 <div className='imgcont w-50' >
                 <div className="layer ">
-                    <img className='img1' src={images[showIndex]} alt="" /> 
+                    <img className='img1' src={Resimages[showIndex][0]} alt="" /> 
                 </div>
                 </div>
                 <div className='desco1 w-50'>
@@ -410,7 +511,7 @@ const Recycle = () => {
                 </div>
                 <div className='imgcont w-50' >
                 <div className="layer2"></div>
-                    <img className='img1' src={images[showIndex]} alt="" /> 
+                    <img className='img2' src={Resimages[showIndex][1]} alt="" /> 
                 </div>
                 
             </Container>
@@ -418,7 +519,7 @@ const Recycle = () => {
             <Container fluid="xl" className='container desc1 d-flex justify-content-within align-items-center' >
                 <div className='imgcont w-50' >
                 <div className="layer ">
-                    <img className='img1' src={images[showIndex]} alt="" /> 
+                    <img className='img1' src={Resimages[showIndex][2]} alt="" /> 
                 </div>
                 </div>
                 <div className='desco1 w-50'>
@@ -442,7 +543,7 @@ const Recycle = () => {
                 </div>
                 <div className='imgcont w-50' >
                 <div className="layer2"></div>
-                    <img className='img1' src={images[showIndex]} alt="" /> 
+                    <img className='img2' src={Resimages[showIndex][3]} alt="" /> 
                 </div>
                 
             </Container>
@@ -450,7 +551,7 @@ const Recycle = () => {
             <Container fluid="xl" className='container desc1 d-flex justify-content-within align-items-center' >
                 <div className='imgcont w-50' >
                 <div className="layer ">
-                    <img className='img1' src={images[showIndex]} alt="" /> 
+                    <img className='img1' src={Resimages[showIndex][4]} alt="" /> 
                 </div>
                 </div>
                 <div className='desco1 w-50'>
@@ -474,12 +575,16 @@ const Recycle = () => {
                 </div>
                 <div className='imgcont w-50' >
                 <div className="layer2"></div>
-                    <img className='img1' src={images[showIndex]} alt="" /> 
+                    <img className='img2' src={resgeneral} alt="" /> 
                 </div>
                 
             </Container>
                 <div>
-                {output}
+                    
+                    <ChatComp>
+
+                    </ChatComp>
+                
             </div>
             </div>
            

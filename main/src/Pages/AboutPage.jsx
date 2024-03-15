@@ -5,13 +5,10 @@ import team_img from "../Images/team_img.png";
 import Sellami from "../Images/Sellami.jpg";
 import Taher from "../Images/Taher.jpg";
 import DJ from "../Images/DJ.jpg";
-import SH from "../Images/SH.jpg";
 import Salah from "../Images/Salah.jpg";
 import BBH from "../Images/BBH.jpg";
-import Islam from "../Images/Islam.jpg";
 import Seif from "../Images/Seif.jpg";
-import BN from "../Images/BN.jpg";
-import ML from "../Images/ML.jpg";
+
 import TH from "../Images/Thanks.png";
 import { CgShapeRhombus } from "react-icons/cg";
 import { Avatar } from "@mui/material";
@@ -69,18 +66,6 @@ const project_members = [
     fb_link: "https://www.facebook.com/anis.topjalil",
   },
   {
-    name: "Soualah mohammed",
-    role: "Frontend developer",
-    img: SH,
-    fb_link: "https://www.facebook.com/profile.php?id=100015850683876",
-  },
-  {
-    name: "Hamzi oussama",
-    role: "Fullstack developer",
-    img: Seif,
-    fb_link: "https://www.facebook.com/seyf1elislam",
-  },
-  {
     name: "Addoune salah",
     role: "Fullstack developer",
     img: Salah,
@@ -93,23 +78,13 @@ const project_members = [
     fb_link: "https://www.facebook.com/profile.php?id=100008149273562",
   },
   {
-    name: "Ouahbi mohammed",
+    name: "Hamzi oussama",
     role: "Fullstack developer",
-    img: Islam,
-    fb_link: "https://www.facebook.com/mohamedislam.ouahbi.1",
+    img: Seif,
+    fb_link: "https://www.facebook.com/seyf1elislam",
   },
-  {
-    name: "Mohammed Lamine",
-    role: "Frontend developer",
-    img: BN,
-    fb_link: "https://www.facebook.com/mohamed.habireh",
-  },
-  {
-    name: "Mohammed Amine",
-    role: "Quality Assurance Tester",
-    img: ML,
-    fb_link: "https://www.facebook.com/100038859726527/",
-  },
+ 
+ 
 ];
 
 const render_project_members = project_members.map((member, index) => {
@@ -194,11 +169,7 @@ function AboutPage() {
         >
           share your knowledge
         </Button>
-        <Button
-          onClick={() => window.location.replace("/About#Thanks")}
-        >
-          FeedBack Special Thanks
-        </Button>
+        
         
       </div>
       <div style={{ height: "50px" }}></div>
@@ -228,6 +199,8 @@ function AboutPage() {
             style={{ marginTop: 10 }}
             fontWeight={"bold"}
           >
+            <span style={{fontSize:25,fontWeight:"300"}}><span style={{color: "#178a9f"}}>Ai-Visionaries </span></span>
+            <br></br><br></br>
             Welcome to our AI and Data Science Master's Student Group! We are a
             passionate group of students pursuing our Master's degrees in the
             exciting fields of Artificial Intelligence and Data Science. With a
@@ -285,31 +258,26 @@ function AboutPage() {
             style={{ marginTop: 10 }}
             lineHeight={1.5}
           >
-            Our website reflects our passion for AI and data science, as well as
-            our commitment to sharing knowledge and creating practical tools for
-            fellow students, professionals, and enthusiasts. We have combined
-            our skills in web development to create an intuitive and interactive
-            platform where users can explore, learn, and apply concepts in AI
-            and data science and linear algebra. and as a result we managed to
-            do the following :<br />
+            We believe in a community that prioritizes a healthy planet and a sustainable future.
+             That's why we created this Garbage Recycling Assistant Center – to empower residents like you
+              to become recycling champions!
+
+            Our goals are clear:<br />
             <span style={{ lineHeight: 2 }}>
               {" "}
-              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> Save our
-              Functions
+              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> Educate and Inform
             </span>
             <br />
             <span style={{ lineHeight: 2 }}>
-              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> Learn new
-              technologies
+              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> Increase Recycling Rates
             </span>
             <br />
             <span style={{ lineHeight: 2 }}>
-              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> apply the
-              knowledge
+              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> Reduce Environmental Impact
             </span>
             <br />
             <span style={{ lineHeight: 2 }}>
-              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> co-working
+              <span style={{ color: "rgb(54, 240, 253);" }}>✓</span> Foster a Culture of Sustainability
             </span>
           </Typography>
         </div>
@@ -358,45 +326,7 @@ function AboutPage() {
           </div>
         </div>
       </div>
-      <div style={{ height: "50px" }}></div>
-      <div
-        id="Thanks"
-        className="Goals w-100 d-flex flex-row"
-        style={{ padding: "15%", paddingTop: "10%", paddingBottom: "5%" }}
-      >
-        <div className="d-flex flex-column">
-          <Typography variant="h4" gutterBottom fontWeight={"bold"}>
-            FeedBack Special Thanks 
-          </Typography>
-          <Typography
-            className="w-100 p-0"
-            variant="h7"
-            gutterBottom
-            style={{ marginTop: 10 }}
-            lineHeight={1.5}
-          >
-            We want to thank the following people who discovered 
-            problems and gave opinions about the site:<br />
-            <span style={{ lineHeight: 2 }}>
-              {" "}
-              <span style={{ color: "rgb(54, 240, 253);" }}>☆</span> 
-              Berbaoui Ashref Abderrahmane (ENSIA Student)
-            </span>
-            <br />
-            
-          </Typography>
-        </div>
-        <div className="intro-img">
-          <img
-            src={TH}
-            alt="logo"
-            height={500}
-            sx={{
-              objectPosition: "top",
-            }}
-          />
-        </div>
-      </div>
+      
     </>
   );
 }
