@@ -402,20 +402,24 @@ Colored glass bottles (depending on your local program)
 ]
 
 const Recycle = () => {
-    const [img,setImg] = useState([]);
+    // const [img,setImg] = useState([]);
     const [output, setoutput] = useState("");
     const [waiting, setWaiting] = useState(false);
     const [question,setquestion] = useState("what to do with plastic garbage")
     const [showIndex,setShowIndex] = useState(0)
-    const handleSubmit = () => {
-        // setWaiting(true);
-        // APIService.chat({question})
-        //   .then((response) => {
-        //     setoutput(response["output"]);
-        //     setWaiting(false);
-        //     console.log(response)
-        //   })
-        //   .catch((error) => console.log("error", error));
+    const [img,setimg] = useState(null);
+    const handleSubmit = (image) => {
+        setWaiting(true);
+        APIService.recycle({image})
+          .then((response) => {
+            setoutput(response["output"]);
+            setWaiting(false);
+            console.log(response)
+            var prediction = Number(response["output"]);
+            setShowIndex(prediction)
+            
+          })
+          .catch((error) => console.log("error", error));
         setoutput("qsdqs");
        setWaiting(false);
       };
@@ -432,7 +436,8 @@ const Recycle = () => {
         //   };
 
         //   fr.readAsText(file);
-        handleSubmit()
+        setimg(file)
+        handleSubmit(file)
         
         }}
         handleCancel={(file) => {}}
