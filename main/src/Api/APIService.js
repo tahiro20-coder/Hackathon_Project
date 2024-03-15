@@ -3,10 +3,10 @@ export default class APIService {
     static recycle(body) {
         return fetch(`http://localhost:5000/recycle`, {
             'method': 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
+            // headers: {
+            //     'Content-Type': 'application/json'
+            // },
+            body: body
         })
         .then(response => response.json())
         .catch(error => console.log(error))

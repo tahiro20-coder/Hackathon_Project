@@ -410,7 +410,8 @@ const Recycle = () => {
     const [img,setimg] = useState(null);
     const handleSubmit = (image) => {
         setWaiting(true);
-        APIService.recycle({image})
+
+        APIService.recycle(image)
           .then((response) => {
             setoutput(response["output"]);
             setWaiting(false);
@@ -436,8 +437,11 @@ const Recycle = () => {
         //   };
 
         //   fr.readAsText(file);
+        const data = new FormData();
+        data.append('img', file);
+
         setimg(file)
-        handleSubmit(file)
+        handleSubmit(data)
         
         }}
         handleCancel={(file) => {}}
