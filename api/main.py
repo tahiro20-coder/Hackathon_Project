@@ -4,11 +4,27 @@ import requests as req
 import numpy as np
 import math as mt
 import json
-import tensorflow as tf
 from PIL import Image  
-model = tf.keras.models.load_model('api/dense.h5')
-# model = tf.keras.layers.TFSMLayer("api/_9217", call_endpoint='serving_default')
 
+from PIL import Image
+
+import torchvision.transforms as transforms
+import torch
+from torchvision.models.mobilenetv2 import Conv2dNormActivation
+model_path = "api/MobileNet__.pth" 
+model = torch.load(model_path)
+
+# image = Image.open("/kaggle/input/garbage-classification/Garbage classification/Garbage classification/cardboard/cardboard1.jpg")  # Change "path_to_your_image.jpg" to the actual file path
+
+# preprocess = transforms.Compose([
+#     transforms.Resize(256),
+#      transforms.ToTensor()
+# ])    
+
+# img = preprocess(image)
+# img = img.unsqueeze(0)
+
+# res = model(img)
 
 def pred(img_path):
     test_image = Image.open(img_path)
@@ -36,6 +52,8 @@ class Recycle(Resource):
         context = ""
         image =  request.json["image"]
         print(image)
+
+        
         # prediction = model(image)
         prediction = 0
         return {"output":prediction}
