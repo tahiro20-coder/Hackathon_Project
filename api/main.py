@@ -6,7 +6,7 @@ import math as mt
 import json
 import tensorflow as tf
 from PIL import Image  
-model = tf.keras.models.load_model('api/_9217')
+model = tf.keras.models.load_model('api/dense.h5')
 # model = tf.keras.layers.TFSMLayer("api/_9217", call_endpoint='serving_default')
 
 
