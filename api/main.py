@@ -2,10 +2,10 @@ from flask_restful import Api, Resource, reqparse
 from flask import Flask, send_from_directory,current_app,jsonify,request
 import requests as req
 import numpy as np
-import math as mt
 import json
 from PIL import Image  
-
+import PIL as pl
+print(req.__version__)
 import tensorflow as tf
 model=tf.keras.models.load_model('api/_9217')
 
