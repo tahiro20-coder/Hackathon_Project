@@ -6,7 +6,7 @@ import os
 import sys
 
 app = Flask(__name__, static_url_path='', static_folder='fronted/build')
-CORS(app, origins=['https://smart-recycle.onrender.com'], methods=['GET', 'POST']) #comment this on deployment
+# CORS(app, origins=['https://smart-recycle.onrender.com'], methods=['GET', 'POST'], allow_headers=['Content-Type']) #comment this on deployment
 api = Api(app)
 
 
