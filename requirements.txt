@@ -5,3 +5,4 @@ fonttools==4.37.4
 numpy==1.25.2
 Requests==2.31.0
 gunicorn==19.7.1
+Werkzeug==2.2.2
