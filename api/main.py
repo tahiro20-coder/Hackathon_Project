@@ -53,7 +53,7 @@ def encode_image(image_path):
     return base64.b64encode(image_file.read()).decode('utf-8')
 
 @main.route('/recycle', methods=["POST","GET"]) #works
-def recycle(){
+def recycle():
     files = request.files["img"]
     # file = files.get('img')
     file = request.files["img"]
@@ -69,7 +69,7 @@ def recycle(){
     prediction = pred(im)
 
     return {"output":prediction}
-}
+
 
 
 # class Recycle(Resource):
