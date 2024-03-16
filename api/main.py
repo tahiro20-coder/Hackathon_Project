@@ -78,7 +78,7 @@ class Recycle(Resource):
 
         # # # Getting the base64 string
         # # base64_image = encode_image(image_path)
-        im = Image.open(BytesIO(base64.decodebytes(res)))
+        im = Image.open(BytesIO(base64.b64decode(res)))
         # print("iam here")
         prediction = pred(im)
         print(prediction)
