@@ -36,7 +36,7 @@ def pred(test_image):
     test_image = test_image.resize((128, 128)) 
     test_image = np.array(test_image) / 255.0  
     test_image = np.expand_dims(test_image, axis=0)
-    res=model.predict(test_image)
+    res=model.predict(test_image[:,:,:,:3])
     res = list(res[0])
     idx=res.index(max(res))
     # cls = ["battery","biological",'brown-glass','cardboard','clothes','green-glass','metal','paper','plastic','shoes','trash','white-glass']
@@ -66,7 +66,7 @@ class Recycle(Resource):
         # context = ""
         # # image =  request.json["image"]
         res =  request.json["files"]
-        print(res)
+
         # files = request.files["img"]
         # # file = files.get('img')
         # file = request.files["img"]
@@ -81,7 +81,7 @@ class Recycle(Resource):
         im = Image.open(BytesIO(base64.b64decode(res)))
         # print("iam here")
         prediction = pred(im)
-        print(prediction)
+
         # print("iam here")
         # response = flask.jsonify({'output': 'prediction'})
         # response.headers.add('Access-Control-Allow-Origin', '*')
