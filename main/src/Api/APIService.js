@@ -6,7 +6,7 @@ export default class APIService {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: body
+            body: JSON.stringify(body)
         })
         .then(response => response.json())
         .catch(error => console.log(error))
