@@ -2,10 +2,9 @@ export default class APIService {
     // Insert an article
     static recycle(body) {
         return fetch(`https://recycle-garbage-backend.onrender.com/recycle`, {
-            'method': 'POST',
+            method: 'POST',
             headers: {
-                "Access-Control-Allow-Origin": "*"
-                // 'Content-Type': 'application/json'
+                "Content-Type": "multipart/form-data;boundary=----WebKitFormBoundaryyrV7KO0BoCBuDbTL"
             },
             body: body
         })
