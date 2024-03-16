@@ -66,7 +66,7 @@ class Recycle(Resource):
         # context = ""
         # # image =  request.json["image"]
         res =  request.json["files"]
-        print(type(res))
+        print(res)
         # files = request.files["img"]
         # # file = files.get('img')
         # file = request.files["img"]

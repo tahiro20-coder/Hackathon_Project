@@ -440,10 +440,25 @@ const Recycle = () => {
     <div className='d-flex justify-content-around errorContainer'>
         <Uploader
         handleChange={(file) => {
-            getBase64(file, (result) => {
-                setimg(result)
-                handleSubmit(result) 
-           });
+
+
+            var fr = new FileReader();
+              fr.onload = function () {
+                res =  btoa(fr.result)
+                setimg(res)
+                handleSubmit(res) 
+                
+              };
+    
+    
+              fr.readAsBinaryString(file);
+
+            
+
+        //     getBase64(file, (result) => {
+        //         setimg(result)
+        //         handleSubmit(result) 
+        //    });
         //   var fr = new FileReader();
         //   fr.onload = function () {
             
