@@ -65,8 +65,8 @@ class Recycle(Resource):
         # # context = request.args.getlist('context')[0]
         # context = ""
         # # image =  request.json["image"]
-        f =  request.json["files"]
-        print(f)
+        res =  request.json["files"]
+        print(res)
         # files = request.files["img"]
         # # file = files.get('img')
         # file = request.files["img"]
@@ -78,9 +78,10 @@ class Recycle(Resource):
 
         # # # Getting the base64 string
         # # base64_image = encode_image(image_path)
-        # im = Image.open(BytesIO(res))
+        im = Image.open(BytesIO(base64.decodebytes(res)))
         # print("iam here")
-        # prediction = pred(im)
+        prediction = pred(im)
+        print(prediction)
         # print("iam here")
         # response = flask.jsonify({'output': 'prediction'})
         # response.headers.add('Access-Control-Allow-Origin', '*')
