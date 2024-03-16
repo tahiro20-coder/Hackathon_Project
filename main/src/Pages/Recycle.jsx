@@ -425,19 +425,32 @@ const Recycle = () => {
       };
       const handleReset = () => {
       }
+     const getBase64 = (file, cb) =>{
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            cb(reader.result)
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
   return (
     <>
     <div className='d-flex justify-content-around errorContainer'>
         <Uploader
         handleChange={(file) => {
-          var fr = new FileReader();
-          fr.onload = function () {
-            setimg(fr.result)
-            handleSubmit(fr.result)
-          };
+            this.getBase64(file, (result) => {
+                setimg(result)
+                handleSubmit(result) 
+           });
+        //   var fr = new FileReader();
+        //   fr.onload = function () {
+            
+        //   };
 
 
-          fr.readAsText(file);
+        //   fr.readAsText(file);
         // const data = new FormData();
         // data.append('img', file);
 
