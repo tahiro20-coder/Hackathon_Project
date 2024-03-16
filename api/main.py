@@ -63,8 +63,10 @@ class Recycle(Resource):
         # context = request.args.getlist('context')[0]
         context = ""
         # image =  request.json["image"]
-        files = request.files
-        file = files.get('img')
+        files = request.files["img"]
+        # file = files.get('img')
+        file = request.files["img"]
+        
         res = file.read()
         # print(res)
         # Path to your image
