@@ -3,9 +3,10 @@ export default class APIService {
     static recycle(body) {
         return fetch(`https://recycle-garbage-backend.onrender.com/recycle`, {
             'method': 'POST',
-            // headers: {
-            //     'Content-Type': 'application/json'
-            // },
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+                // 'Content-Type': 'application/json'
+            },
             body: body
         })
         .then(response => response.json())
