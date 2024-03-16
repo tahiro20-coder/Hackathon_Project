@@ -3,9 +3,6 @@ export default class APIService {
     static recycle(body) {
         return fetch(`https://recycle-garbage-backend.onrender.com/recycle`, {
             method: 'POST',
-            headers: {
-                "Content-Type": "multipart/form-data;boundary=----WebKitFormBoundaryyrV7KO0BoCBuDbTL"
-            },
             body: body
         })
         .then(response => response.json())
