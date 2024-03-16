@@ -54,6 +54,10 @@ function Header() {
               <CustomLink className="link_page" to="/Assistant">
               Assistant
               </CustomLink>
+              <CustomLink className="link_page" to="/Industries">
+                For Industries
+              </CustomLink>
+              
               <CustomLink className="link_page" to="/About">
                 About
               </CustomLink>

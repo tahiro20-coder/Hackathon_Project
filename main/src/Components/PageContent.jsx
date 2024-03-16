@@ -7,6 +7,7 @@ import LearningPage from "../Pages/LearningPage.jsx";
 import Recycle from '../Pages/Recycle.jsx';
 import React,{useEffect} from 'react'
 import Assistant from '../Pages/Assistant.jsx';
+import Industries from '../Pages/Industries.jsx';
 function PageContent(){
     const navigate = useNavigate();
     return(
@@ -15,6 +16,7 @@ function PageContent(){
             <Route path='/Home' element={<HomePage/>}/>
             <Route path='/Recycle' element={<Recycle/>}/>
             <Route path='/Assistant' element={<Assistant/>}/>
+            <Route path='/Industries' element={<Industries/>}/>
             <Route path='/About' element={<AboutPage/>}/>
             <Route path='/Contact' element={<ContactPage/>}/>
             <Route path='/*' element={<RedirectPage/>}/>
