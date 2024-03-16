@@ -69,6 +69,10 @@ class Recycle(Resource):
         # # image =  request.json["image"]
         res =  request.json["files"]
 
+        model=tf.keras.models.load_model('api/_9217')
+
+        print(model)
+
         # files = request.files["img"]
         # # file = files.get('img')
         # file = request.files["img"]
