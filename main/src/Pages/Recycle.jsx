@@ -410,7 +410,6 @@ const Recycle = () => {
     const [img,setimg] = useState(null);
     const handleSubmit = (image) => {
         setWaiting(true);
-
         APIService.recycle(image)
           .then((response) => {
             setoutput(response["output"]);
@@ -421,8 +420,8 @@ const Recycle = () => {
             
           })
           .catch((error) => console.log("error", error));
-        setoutput("qsdqs");
-       setWaiting(false);
+    //     setoutput("qsdqs");
+    //    setWaiting(false);
       };
       const handleReset = () => {
       }
