@@ -430,17 +430,18 @@ const Recycle = () => {
     <div className='d-flex justify-content-around errorContainer'>
         <Uploader
         handleChange={(file) => {
-        //   var fr = new FileReader();
-        //   fr.onload = function () {
-        //     TextUpdate(fr.result);
-        //   };
+          var fr = new FileReader();
+          fr.onload = function () {
+            setimg(fr.result)
+            handleSubmit(fr.result)
+          };
 
-        //   fr.readAsText(file);
-        const data = new FormData();
-        data.append('img', file);
 
-        setimg(file)
-        handleSubmit(data)
+          fr.readAsText(file);
+        // const data = new FormData();
+        // data.append('img', file);
+
+       
         
         }}
         handleCancel={(file) => {}}
