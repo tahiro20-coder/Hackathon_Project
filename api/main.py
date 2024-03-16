@@ -81,11 +81,11 @@ class Recycle(Resource):
         # # # Getting the base64 string
         # # base64_image = encode_image(image_path)
         im = Image.open(BytesIO(base64.b64decode(res)))
-        # print("iam here")
-        try:
-            prediction = pred(im)
-        except:
-            print("error")
+        # # print("iam here")
+        # try:
+        #     prediction = pred(im)
+        # except:
+        #     print("error")
         # print("iam here")
         # response = flask.jsonify({'output': 'prediction'})
         # response.headers.add('Access-Control-Allow-Origin', '*')
