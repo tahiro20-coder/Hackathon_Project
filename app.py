@@ -8,12 +8,10 @@ import sys
 # app = Flask(__name__, static_url_path='', static_folder='fronted/build')
 # CORS(app, origins=['https://smart-recycle.onrender.com'], methods=['GET', 'POST'], support_credentials=True)#comment this on deployment
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://smart-recycle.onrender.com",
-            "Access-Control-Allow-Origin": "https://smart-recycle.onrender.com",
-            "Access-Control-Allow-Credentials": True,
-            'supports_credentials': True}})
+CORS(app, resources={r"/*": {"origins": "https://smart-recycle.onrender.com"}})
 api = Api(app)
 
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['UPLOAD_FOLDER'] = r'/*' 
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
