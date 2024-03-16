@@ -440,7 +440,7 @@ const Recycle = () => {
     <div className='d-flex justify-content-around errorContainer'>
         <Uploader
         handleChange={(file) => {
-            this.getBase64(file, (result) => {
+            getBase64(file, (result) => {
                 setimg(result)
                 handleSubmit(result) 
            });
