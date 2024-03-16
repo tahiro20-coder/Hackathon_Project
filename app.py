@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory,current_app,jsonify,request,render_template
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS #comment this on deployment
-from api.main import Chat
+from api.main import Chat,Recycle
 import os
 import sys
 from api.main import main
@@ -26,5 +26,4 @@ def internal_server_error(error):
     return response, 500
 
 api.add_resource(Chat, '/chat')
-# api.add_resource(Recycle, '/recycle')
-app.register_blueprint(main) 
+api.add_resource(Recycle, '/recycle')
