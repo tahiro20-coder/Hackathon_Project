@@ -61,32 +61,31 @@ class Recycle(Resource):
         print(self)
         
         # matrix_2 = np.array(request.json["matrix2"])
-        print("iam here")
-        # context = request.args.getlist('context')[0]
-        context = ""
-        # image =  request.json["image"]
-        f =  request.json["files"]
-        print(f)
-        files = request.files["img"]
-        # file = files.get('img')
-        file = request.files["img"]
-        print("iam here")
-        res = file.read()
-        # print(res)
-        # Path to your image
-        # image_path = "path_to_your_image.jpg"
+        # print("iam here")
+        # # context = request.args.getlist('context')[0]
+        # context = ""
+        # # image =  request.json["image"]
+        # f =  request.json["files"]
+        # print(f)
+        # files = request.files["img"]
+        # # file = files.get('img')
+        # file = request.files["img"]
+        # print("iam here")
+        # res = file.read()
+        # # print(res)
+        # # Path to your image
+        # # image_path = "path_to_your_image.jpg"
 
-        # # Getting the base64 string
-        # base64_image = encode_image(image_path)
-        im = Image.open(BytesIO(res))
-        print("iam here")
-        prediction = pred(im)
-        print("iam here")
-        response = flask.jsonify({'output': 'prediction'})
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return response
-
-        # return {"output":prediction}
+        # # # Getting the base64 string
+        # # base64_image = encode_image(image_path)
+        # im = Image.open(BytesIO(res))
+        # print("iam here")
+        # prediction = pred(im)
+        # print("iam here")
+        # response = flask.jsonify({'output': 'prediction'})
+        # response.headers.add('Access-Control-Allow-Origin', '*')
+        prediction = 8
+        return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
 class Chat(Resource):
