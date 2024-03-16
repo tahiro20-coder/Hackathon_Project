@@ -36,7 +36,9 @@ def pred(test_image):
     test_image = test_image.resize((128, 128)) 
     test_image = np.array(test_image) / 255.0  
     test_image = np.expand_dims(test_image, axis=0)
+    print("pred")
     res=model.predict(test_image[:,:,:,:3])
+    print("done")
     res = list(res[0])
     idx=res.index(max(res))
     # cls = ["battery","biological",'brown-glass','cardboard','clothes','green-glass','metal','paper','plastic','shoes','trash','white-glass']
