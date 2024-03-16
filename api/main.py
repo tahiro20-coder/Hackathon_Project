@@ -4,6 +4,7 @@ import requests as req
 import numpy as np
 import json
 from PIL import Image  
+from io import BytesIO
 
 import tensorflow as tf
 model=tf.keras.models.load_model('api/_9217')
@@ -30,16 +31,16 @@ model=tf.keras.models.load_model('api/_9217')
 
 # res = model(img)
 
-def pred(img_path):
-    test_image = Image.open(img_path)
+def pred(test_image):
+    # test_image = Image.open(img_path)
     test_image = test_image.resize((128, 128)) 
     test_image = np.array(test_image) / 255.0  
     test_image = np.expand_dims(test_image, axis=0)
     res=model.predict(test_image)
     res=list(res)
     idx=res.index(max(res))
-    cls = ["battery","biological",'brown-glass','cardboard','clothes','green-glass','metal','paper','plastic','shoes','trash','white-glass']
-    return cls[idx]
+    # cls = ["battery","biological",'brown-glass','cardboard','clothes','green-glass','metal','paper','plastic','shoes','trash','white-glass']
+    return idx
 
 import base64
 
@@ -71,39 +72,9 @@ class Recycle(Resource):
 
         # # Getting the base64 string
         # base64_image = encode_image(image_path)
-        base64_image = res
+        im = Image.open(BytesIO(res))
+        prediction = pred(im)
 
-        headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY_Open}"
-        }
-
-        payload = {
-        "model": "gpt-4-vision-preview",
-        "messages": [
-            {
-            "role": "user",
-            "content": [
-                {
-                "type": "text",
-                "text": "What’s in this image?"
-                },
-                {
-                "type": "image_url",
-                "image_url": {
-                    "url": f"data:image/jpeg;base64,{base64_image}"
-                }
-                }
-            ]
-            }
-        ],
-        "max_tokens": 4096  
-        }
-
-        response = req.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-
-        print(response.json())
-        prediction = 1
         return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
