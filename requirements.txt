@@ -7,3 +7,4 @@ Requests==2.31.0
 gunicorn==19.7.1
 Werkzeug==2.2.2
 pillow==9.4.0
+tensorflow==2.15.0

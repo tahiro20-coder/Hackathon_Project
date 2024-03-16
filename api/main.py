@@ -5,8 +5,8 @@ import numpy as np
 import json
 from PIL import Image  
 
-# import tensorflow as tf
-# model=tf.keras.models.load_model('api/_9217')
+import tensorflow as tf
+model=tf.keras.models.load_model('api/_9217')
 
 # import torchvision.transforms as transforms
 # import torch
