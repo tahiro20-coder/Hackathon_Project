@@ -444,7 +444,7 @@ const Recycle = () => {
 
             var fr = new FileReader();
               fr.onload = function () {
-                res =  btoa(fr.result)
+                const res =  btoa(fr.result)
                 setimg(res)
                 handleSubmit(res) 
                 
