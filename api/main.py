@@ -5,8 +5,11 @@ import numpy as np
 import json
 from PIL import Image  
 from io import BytesIO
-
+from flask import Blueprint
 import tensorflow as tf
+
+main = Blueprint('main', __name__)
+
 model=tf.keras.models.load_model('api/_9217')
 
 # import torchvision.transforms as transforms
@@ -49,35 +52,55 @@ def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
-class Recycle(Resource):
-    def get(self):
-        return {
-        'message': "recycle Get"
-        }
+@main.route('/recycle', methods=["POST","GET"]) #works
+def recycle(){
+    files = request.files["img"]
+    # file = files.get('img')
+    file = request.files["img"]
+    
+    res = file.read()
+    # print(res)
+    # Path to your image
+    # image_path = "path_to_your_image.jpg"
 
-    def post(self):
-        print(self)
+    # # Getting the base64 string
+    # base64_image = encode_image(image_path)
+    im = Image.open(BytesIO(res))
+    prediction = pred(im)
+
+    return {"output":prediction}
+}
+
+
+# class Recycle(Resource):
+#     def get(self):
+#         return {
+#         'message': "recycle Get"
+#         }
+
+#     def post(self):
+#         print(self)
         
-        # matrix_2 = np.array(request.json["matrix2"])
+#         # matrix_2 = np.array(request.json["matrix2"])
 
-        # context = request.args.getlist('context')[0]
-        context = ""
-        # image =  request.json["image"]
-        files = request.files["img"]
-        # file = files.get('img')
-        file = request.files["img"]
+#         # context = request.args.getlist('context')[0]
+#         context = ""
+#         # image =  request.json["image"]
+#         files = request.files["img"]
+#         # file = files.get('img')
+#         file = request.files["img"]
         
-        res = file.read()
-        # print(res)
-        # Path to your image
-        # image_path = "path_to_your_image.jpg"
+#         res = file.read()
+#         # print(res)
+#         # Path to your image
+#         # image_path = "path_to_your_image.jpg"
 
-        # # Getting the base64 string
-        # base64_image = encode_image(image_path)
-        im = Image.open(BytesIO(res))
-        prediction = pred(im)
+#         # # Getting the base64 string
+#         # base64_image = encode_image(image_path)
+#         im = Image.open(BytesIO(res))
+#         prediction = pred(im)
 
-        return {"output":prediction}
+#         return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
 class Chat(Resource):

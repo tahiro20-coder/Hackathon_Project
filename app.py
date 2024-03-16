@@ -4,6 +4,7 @@ from flask_cors import CORS #comment this on deployment
 from api.main import Chat,Recycle
 import os
 import sys
+from api.main import main
 
 app = Flask(__name__, static_url_path='', static_folder='fronted/build')
 CORS(app, origins=['https://smart-recycle.onrender.com'], methods=['GET', 'POST'], support_credentials=True)#comment this on deployment
@@ -18,4 +19,5 @@ def serve(path):
     return send_from_directory(app.static_folder,'index.html')
 
 api.add_resource(Chat, '/chat')
-api.add_resource(Recycle, '/recycle')
+# api.add_resource(Recycle, '/recycle')
+app.register_blueprint(main) 
