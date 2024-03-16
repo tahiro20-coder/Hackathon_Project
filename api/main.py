@@ -51,7 +51,7 @@ def encode_image(image_path):
   with open(image_path, "rb") as image_file:
     return base64.b64encode(image_file.read()).decode('utf-8')
 
-
+from random import randrange
 
 class Recycle(Resource):
     def get(self):
@@ -90,7 +90,8 @@ class Recycle(Resource):
         # print("iam here")
         # response = flask.jsonify({'output': 'prediction'})
         # response.headers.add('Access-Control-Allow-Origin', '*')
-        prediction = 8
+        
+        prediction = randrange(12)
         return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"

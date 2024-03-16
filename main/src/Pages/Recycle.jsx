@@ -437,7 +437,12 @@ const Recycle = () => {
     }
   return (
     <>
-    <div className='d-flex justify-content-around errorContainer'>
+    
+    <div style={{width:"100%",textAlign:"center",marginTop:"25px",paddingLeft:50,paddingRight:50}}>
+            The Model is out of service right now because of the deployement limitations, However the site will predict a random type for further review
+        </div>
+    <div className='d-flex justify-content-around errorContainer ' >
+        
         <Uploader
         handleChange={(file) => {
 
