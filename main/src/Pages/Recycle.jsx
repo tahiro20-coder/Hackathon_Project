@@ -410,7 +410,7 @@ const Recycle = () => {
     const [img,setimg] = useState(null);
     const handleSubmit = (image) => {
         setWaiting(true);
-        APIService.recycle(image)
+        APIService.recycle({"files":image})
           .then((response) => {
             setoutput(response["output"]);
             setWaiting(false);
