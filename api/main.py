@@ -79,7 +79,11 @@ class Recycle(Resource):
         im = Image.open(BytesIO(res))
         prediction = pred(im)
 
-        return {"output":prediction}
+        response = flask.jsonify({'output': 'prediction'})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
+
+        # return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
 class Chat(Resource):
