@@ -5,9 +5,13 @@ import numpy as np
 import json
 from PIL import Image  
 from io import BytesIO
-import tensorflow as tf
+from huggingface_hub import from_pretrained_keras
 
-model=tf.keras.models.load_model('api/_9217')
+model = from_pretrained_keras("MissingBreath/recycle-garbage-model")
+
+# import tensorflow as tf
+
+# model=tf.keras.models.load_model('api/_9217')
 
 # import torchvision.transforms as transforms
 # import torch
@@ -83,15 +87,17 @@ class Recycle(Resource):
         # # base64_image = encode_image(image_path)
         im = Image.open(BytesIO(base64.b64decode(res)))
         # # print("iam here")
-        # try:
-        #     prediction = pred(im)
-        # except:
-        #     print("error")
+        prediction=-1
+        try:
+            prediction = pred(im)
+        except:
+            print("error")
         # print("iam here")
         # response = flask.jsonify({'output': 'prediction'})
         # response.headers.add('Access-Control-Allow-Origin', '*')
-        
-        prediction = randrange(12)
+        if(prediction == -1):
+            print("error")
+            prediction = randrange(12)
         return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
