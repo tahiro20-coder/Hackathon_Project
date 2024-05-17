@@ -91,7 +91,7 @@ const render_project_members = project_members.map((member, index) => {
   return (
     <div
       className="row-xxl d-flex flex-column align-items-center justify-content-center mmbcont"
-      style={{ fontWeight: "300", padding: "0.5em" }}
+      style={{ fontWeight: "300", padding: "0.5em" ,width:"33%"}}
       key={index}
     >
       <a href={member.fb_link} target="_blank">
@@ -230,11 +230,12 @@ function AboutPage() {
             </div>
           </div>
           <div
-            className="row-xs d-flex flex-wrap justify-content-between align-items-center"
+            className="row-xs d-flex flex-row flex-wrap justify-content-center align-items-center"
             style={{
               fontSize: "1.5rem",
               fontWeight: "300",
               padding: "0.5em",
+              // width:"50%"
             }}
           >
             {render_project_members}

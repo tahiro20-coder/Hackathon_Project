@@ -1,5 +1,5 @@
 import {Route, Routes,useNavigate,Navigate  } from 'react-router-dom';
-import HomePage from '../Pages/HomePage.js';
+import HomePage from '../Pages/HomePage.jsx';
 import AboutPage from '../Pages/AboutPage.jsx';
 import ContactPage from '../Pages/ContactPage.js';
 import RedirectPage from '../Pages/Redirect.jsx';
