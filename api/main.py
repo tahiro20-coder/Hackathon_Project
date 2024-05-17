@@ -118,14 +118,14 @@ class Recycle(Resource):
         # if(prediction == -1):
         #     print("error")
         url = "https://seyf1elislam-test-test.hf.space/classify"
-        response = upload_file(img,url)
-        prediction = response["prediction"]
-        # try:
-        #     response = upload_file(img,url)
-        #     prediction = response["prediction"]
-        # except:
-        #     print("error")
-        #     prediction = randrange(12)
+        # response = upload_file(img,url)
+        # prediction = response["prediction"]
+        try:
+            response = upload_file(img,url)
+            prediction = response["prediction"]
+        except:
+            print("error")
+            prediction = randrange(12)
         return {"output":prediction}
 
 API_KEY  = "blBXxEYF7eYX0h3O17rtVZOc0REp0RW6"
