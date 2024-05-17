@@ -73,7 +73,7 @@ def upload_file(file, url="http://localhost:8000/classify"):
       image_bytes = buf.getvalue()
 
       files = {"image": image_bytes}
-      response = requests.post(url, files=files)
+      response = req.post(url, files=files)
 
     return response.json()
 
