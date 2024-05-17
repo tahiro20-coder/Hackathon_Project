@@ -105,7 +105,7 @@ class Recycle(Resource):
 
         # # # Getting the base64 string
         # # base64_image = encode_image(image_path)
-        im = Image.open(BytesIO(base64.b64decode(res)))
+        im = Image.open(BytesIO(base64.b64decode(res))).convert("RGB")
         # # print("iam here")
         # prediction=-1
         # try:
