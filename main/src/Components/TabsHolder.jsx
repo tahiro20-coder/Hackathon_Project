@@ -8,6 +8,7 @@ import { Avatar } from "@mui/material";
 import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
 import EmblaCarousel from '../Components/EmblaCarousel'
+import { useTranslation } from "react-i18next";
 import '../Styles/embla.css'
 import battery1 from "../Images/GC/battery/battery (1).jpg"
 import battery2 from "../Images/GC/battery/battery (2).jpg"
@@ -235,6 +236,7 @@ function CustomTabPanel(props) {
 
 const TabsHolder = () => {
     const [value, setValue] = React.useState(0);
+    const { t, i18n } = useTranslation();
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -245,18 +247,18 @@ const TabsHolder = () => {
     <Box sx={{ width: '100%' }}>
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
       <Tabs  value={value} onChange={handleChange} centered  >
-        <Tab label="Battery" {...a11yProps(0)} className='Tab' />
-        <Tab label="Biological" {...a11yProps(1)} className='Tab'/>
-        <Tab label="Brown Glass" {...a11yProps(2)} className='Tab'/>
-        <Tab label="Cardboard" {...a11yProps(3)} className='Tab'/>
-        <Tab label="Clothes" {...a11yProps(4)} className='Tab'/>
-        <Tab label="Green Glass" {...a11yProps(5)} className='Tab'/>
-        <Tab label="Metal" {...a11yProps(6)} className='Tab'/>
-        <Tab label="Paper" {...a11yProps(7)} className='Tab'/>
-        <Tab label="Plastic" {...a11yProps(8)} className='Tab'/>
-        <Tab label="Shoes" {...a11yProps(9)} className='Tab'/>
-        <Tab label="Trash" {...a11yProps(10)} className='Tab'/>
-        <Tab label="White Glass" {...a11yProps(11)} className='Tab'/>
+        <Tab label={t("Battery")} {...a11yProps(0)} className='Tab' />
+        <Tab label={t("Biological")} {...a11yProps(1)} className='Tab'/>
+        <Tab label={t("Brown Glass")} {...a11yProps(2)} className='Tab'/>
+        <Tab label={t("Cardboard")} {...a11yProps(3)} className='Tab'/>
+        <Tab label={t("Clothes")} {...a11yProps(4)} className='Tab'/>
+        <Tab label={t("Green Glass" )}{...a11yProps(5)} className='Tab'/>
+        <Tab label={t("Metal")} {...a11yProps(6)} className='Tab'/>
+        <Tab label={t("Paper")} {...a11yProps(7)} className='Tab'/>
+        <Tab label={t("Plastic")} {...a11yProps(8)} className='Tab'/>
+        <Tab label={t("Shoes")} {...a11yProps(9)} className='Tab'/>
+        <Tab label={t("Trash")} {...a11yProps(10)} className='Tab'/>
+        <Tab label={t("White Glass")} {...a11yProps(11)} className='Tab'/>
       </Tabs>
     </Box>
       <CustomTabPanel value={value} index={0}> {Food_Generator(battery_List)} </CustomTabPanel>

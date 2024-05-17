@@ -3,7 +3,9 @@ import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Container from 'react-bootstrap/Container';
 import "../Styles/ContactPage.css"
+import { useTranslation } from "react-i18next";
 function ContactPage(){
+  const { t, i18n } = useTranslation();
     const [formStatus, setFormStatus] = useState('Send')
     const form = useRef();
 
@@ -34,41 +36,46 @@ function ContactPage(){
       <div>
       <Container fluid="xxl" className='CPT'>
           <div className="CPTTitle">
-            Contact Us
+            {t("Contact Us")}
+            
             <hr className='lineSt'/>
           </div>
           
           <div className='CPTdesc'>
-            Here you can send us your feedback, problems, sujessions and anything you want to tell us about
-            feel free and write what ever you want to say we will read it later.
+          {t("Here you can send us your feedback, problems, sujessions and anything you want to tell us about feel free and write what ever you want to say we will read it later.")}
+            
           </div>
         </Container>
       <div className="container-xxl mt-5 main-ctp"  style={{height:"fit-content"}}>
         
 
-      <h2 className="mb-3">Please feel free to give your feedback:</h2>
+      <h2 className="mb-3">{t("Please feel free to give your feedback:")}</h2>
       <form ref={form} onSubmit={onSubmit}>
         <div className="mb-3">
           <label className="form-label" htmlFor="name">
-            Name
+          {t("Name")}
+            
           </label>
           <input className="form-control" type="text" name="name" id="name" required />
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="subject">
-            subject
+          {t("subject")}
+            
           </label>
           <input className="form-control" type="text" name="subject" id="subject" required />
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="email">
-            Email
+          {t("Email")}
+            
           </label>
           <input className="form-control" type="email" name="email" id="email" required />
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="message">
-            Message
+          {t("Message")}
+            
           </label>
           <textarea className="form-control" name="message" id="message" required style={{height:"100px", padding:'1.5em'}}/>
         </div>

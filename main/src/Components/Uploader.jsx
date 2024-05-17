@@ -6,12 +6,14 @@ import { Alert } from "@mui/material";
 import { Button } from "react-bootstrap";
 import emp from "../Images/emp.png";
 import full from "../Images/full.png";
+import { useTranslation } from "react-i18next";
 const Uploader = ({
   handleChange,
   handleCancel,
   name = "file",
   types = ["CSV"],
 }) => {
+  const { t, i18n } = useTranslation();
   const [type, setType] = useState("normal");
   const [file, setFile] = useState();
   return (
@@ -58,9 +60,9 @@ const Uploader = ({
             <img className='imgup' src={type == "success" ? full : emp } alt="" />
             {/* <Upload size={22} /> */}
             <div>
-              Drag and Drop or
-              <span style={{ color: "var(--blue)" }}> Choose image </span>
-              to Upload
+              {t("Drag and Drop or")}
+              <span style={{ color: "var(--blue)" }}> {t("Choose image")} </span>
+              {t("to Upload")}
             </div>
             <div className="d-flex flex-row ">
               {types.map((e, i) => {
@@ -78,17 +80,17 @@ const Uploader = ({
       />
       {type == "type" ? (
         <Alert className="w-100" severity="error">
-          The Type of the File u choose is not Accepted
+          {t("The Type of the File u choose is not Accepted")}
         </Alert>
       ) : type == "size" ? (
         <Alert className="w-100" severity="error">
-          The Size of the File u choose is not Accepted
+          {t("The Size of the File u choose is not Accepted")}
         </Alert>
       ) : type == "success" ? (
         <Alert className="w-100 align-items-center" severity="success">
           <div className="d-flex flex-column">
             <span>{file.name}</span>
-            <span>Uploaded Successfully</span>
+            <span>{t("Uploaded Successfully")}</span>
           </div>
         </Alert>
       ) : (
@@ -106,7 +108,7 @@ const Uploader = ({
             setFile();
           }}
         >
-          Cancel
+          {t("Cancel")}
         </Button>
         <Button
           onClick={() => {
@@ -114,7 +116,7 @@ const Uploader = ({
           }}
           disabled={type != "success"}
         >
-          Recycle
+          {t("Recycle")}
         </Button>
       </div>
     </div>

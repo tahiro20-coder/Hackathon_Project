@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom'
+import { useTranslation } from "react-i18next";
 const CardShow = ({title="Recycle",icon,text="",link}) => {
+  const { t, i18n } = useTranslation();
   return (
     <div className='Card-Show d-flex flex-column justify-content-center align-items-center pl-3 pr-3'>
         <div className='d-flex flex-column justify-content-center align-items-center ' style={{height:"55%",zIndex:5,gap:"10px"}}>
@@ -16,7 +18,7 @@ const CardShow = ({title="Recycle",icon,text="",link}) => {
                     {text}
             </span>
             <Link to={link} >
-                <Button variant='outlined' className='intro-button-nb'>Find More</Button>
+                <Button variant='outlined' className='intro-button-nb'>{t("Find More")}</Button>
             </Link>
         </div>
     </div>

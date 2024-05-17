@@ -1,11 +1,12 @@
 import React , {useState,useEffect} from 'react'
 import error_image from "../Images/Error.png"
 import "../Styles/Redirect.css"
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 const RedirectPage = () => {
     const [timeLeft, setTimeLeft] = useState(5);
     const navigate = useNavigate();
-
+    const { t, i18n } = useTranslation();
 useEffect(() => {
     if(timeLeft===0){
     //    console.log("TIME LEFT IS 0");
@@ -33,10 +34,11 @@ useEffect(() => {
     <div className='d-flex justify-content-around errorContainer'>
         <div className='d-flex flex-column align-items-center justify-content-center'>
             <div className='titleError'>
-                Error Wrong Page 
+                {t("Error Wrong Page")}
+                
             </div>
             <div className="redirectError">
-                Redirecting in {timeLeft} seconds
+            {t("Redirecting in")}  {timeLeft} {t("seconds")}
 
             </div>
         </div>

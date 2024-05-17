@@ -11,8 +11,10 @@ import APIService from "../Api/APIService";
 import { CircularProgress } from "@mui/material";
 import resg from "../Images/res1.jfif";
 import user from "../Images/user.png";
+import { useTranslation } from "react-i18next";
 function ChatComp(){
-    const [text,setText] = useState("How can i recycle a plastic bag")
+    const { t, i18n } = useTranslation();
+    const [text,setText] = useState(t("How can i recycle a plastic bag"))
     const [output, setoutput] = useState("");
     const [waiting, setWaiting] = useState(false);
     const [answer, setAnswer] = useState([]);
@@ -34,7 +36,7 @@ function ChatComp(){
     return(
         <div style={{width:"100%"}}>
             <div className='descotitle' style={{textAlign:"center"}}>
-                        Recycling Garbage <span style={{color: "#578a25"}}>Assistant </span>
+            {t("Recycling Garbage")}  <span style={{color: "#578a25"}}>{t("Assistant")} </span>
                     </div>
                     <div style={{height:50}}>
 
