@@ -479,6 +479,9 @@
     width: 50%;
 }
  @media (max-width: 960px) {
+    .desco1{
+        margin: 0 !important;
+    }
     .rgb{
         flex-direction: column !important;
     }
