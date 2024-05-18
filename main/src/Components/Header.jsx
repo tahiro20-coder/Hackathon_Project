@@ -129,7 +129,7 @@ function Header() {
           </Navbar.Collapse>
         </Container>
 
-        <MaterialUISwitch value={i18n.resolvedLanguage == "ar"} sx={{ m: 1 }} onClick={()=>{
+        <MaterialUISwitch value={i18n.resolvedLanguage != "ar"} sx={{ m: 1 }} onClick={()=>{
           if(i18n.resolvedLanguage == "ar"){
             i18n.changeLanguage("en");
           }else{
