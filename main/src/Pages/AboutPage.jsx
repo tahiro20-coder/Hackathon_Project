@@ -81,7 +81,7 @@ function AboutPage() {
       fb_link: "https://www.facebook.com/sallah.psg.1",
     },
     {
-      name: "Babahammo mohammed",
+      name: t("Babahammo mohammed"),
       role: t("Frontend developer"),
       img: BBH,
       fb_link: "https://www.facebook.com/profile.php?id=100008149273562",

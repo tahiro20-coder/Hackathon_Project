@@ -93,7 +93,7 @@ function ChatComp(){
                             }
                         
                     }}>
-                    Send
+                    {t("Send")}
                 </Button>
             </div>
         </div>

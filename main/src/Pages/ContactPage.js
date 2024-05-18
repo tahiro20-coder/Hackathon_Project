@@ -6,17 +6,17 @@ import "../Styles/ContactPage.css"
 import { useTranslation } from "react-i18next";
 function ContactPage(){
   const { t, i18n } = useTranslation();
-    const [formStatus, setFormStatus] = useState('Send')
+    const [formStatus, setFormStatus] = useState(t('Send'))
     const form = useRef();
 
     const onSubmit = (e) => {
         if(formStatus==='Thanks for your feedback'){
           e.target.reset()
-          setFormStatus('send')
+          setFormStatus(t('Send'))
         }
         else{
           e.preventDefault()
-          setFormStatus('Submitting...')
+          setFormStatus(t('Submitting...'))
           
          
          
@@ -26,7 +26,7 @@ function ContactPage(){
           }, (error) => {
               alert(error.message)
           })
-          setFormStatus('Thanks for your feedback')
+          setFormStatus(t('Thanks for your feedback'))
           
         }
           
@@ -36,7 +36,7 @@ function ContactPage(){
       <div>
       <Container fluid="xxl" className='CPT'>
           <div className="CPTTitle">
-            {t("Contact Us")}
+            {t("Contact us")}
             
             <hr className='lineSt'/>
           </div>

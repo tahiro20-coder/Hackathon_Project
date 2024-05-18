@@ -45,8 +45,8 @@ function HomePage() {
         <span style={{color:"var(--main)",fontWeight:"200",fontSize:"24px"}}>{t("So Much to do!")}</span>
             <div className='second-title text-center' style={{fontSize:"40px"}}>
                 <span>{t("Different")} <span style={{color:"var(--main)"}}> {t("Benifits")}  </span> {t("&")}  
-                <span style={{color:"var(--main)"}}> {t("Solutions")}</span>  {t("To")}<br />
-                 <span style={{color:"var(--main)"}}> {t("Discover")}.</span></span>
+                <span style={{color:"var(--main)"}}> {t("Solutions")}</span> 
+                 <span style={{color:"var(--main)"}}> {t("To Discover")}.</span></span>
             </div>
             <div>
             {t("Dive deeper into recycling! Discover surprising eco-benefits, explore easy solutions at home, and build a greener future, together, one step at a time.")}
