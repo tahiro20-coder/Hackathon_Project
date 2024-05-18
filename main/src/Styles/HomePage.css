@@ -475,7 +475,35 @@
 .MuiTabs-flexContainer{
     flex-wrap: wrap;
 }
+.second-page-start{
+    width: 50%;
+}
  @media (max-width: 960px) {
+    .rgb{
+        flex-direction: column !important;
+    }
+    *{
+        text-align: center !important;
+    }
+    .right-area{
+        width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    .second-title{
+        text-align: center !important;
+    }
+    .second-page-start{
+        width: 100% !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .img-left{
+        display: none;
+    }
+    .lbb-img{
+        display: none;
+    }
     .Card-show{
         width: 100%;
         align-items: center;

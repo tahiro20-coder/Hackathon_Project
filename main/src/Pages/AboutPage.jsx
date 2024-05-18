@@ -312,7 +312,7 @@ function AboutPage() {
                 fontSize: "45px",
               }}
             >
-              <span style={{ color: "#D9383C" }}> {t("share")}  </span>{t("your knowledge")}  
+              <span style={{ color: "#D9383C" }}> {t("share")}  </span> {t("your knowledge")}  
             </div>
             <div className="intro-content">
               <Typography
